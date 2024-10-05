@@ -4,6 +4,9 @@ version '1.0'
 buildscript {
     repositories {
          mavenCentral()
+		 maven {         
+        url = uri("https://mvnrepository.com")
+    }
         google()
 
     }
@@ -34,6 +37,6 @@ android {
         disable 'InvalidPackage'
     }
     dependencies{
-        implementation 'com.tom_roush:pdfbox-android:1.8.10.2'
+        implementation 'com.tom_roush:pdfbox-android:1.8.10.1'
     }
 }
