@@ -42,6 +42,6 @@ android {
         disable 'InvalidPackage'
     }
     dependencies{
-        implementation 'com.tom_roush:pdfbox-android:1.8.10.3'
+        implementation 'com.tom-roush:pdfbox-android:1.8.10.3'
     }
 }
