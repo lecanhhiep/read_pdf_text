@@ -43,8 +43,10 @@ public class SwiftReadPdfTextPlugin: NSObject, FlutterPlugin {
             let pageCount = pdf.pageCount
           
               for i in 0 ..< pageCount {
-                  let pageContent = pdf.page(at: i)!.string!
-                  pdfText += pageContent
+				  if(pdf.page(at: i) != nil) {
+					let pageContent = pdf.page(at: i)!.string!
+					pdfText += pageContent
+				  }
               }
                 DispatchQueue.main.sync {
                   result(pdfText);
