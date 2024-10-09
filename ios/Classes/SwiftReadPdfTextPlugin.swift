@@ -70,8 +70,10 @@ private func getPDFtextPaginated (result: FlutterResult, path: String)
             let pageCount = pdf.pageCount
           
               for i in 0 ..< pageCount {
+				if(pdf.page(at: i) != nil) {
                   let pageContent = pdf.page(at: i)!.string!
                   pdfArray.append(pageContent)
+				}
               }
                 DispatchQueue.main.sync {
                   result(pdfArray);
