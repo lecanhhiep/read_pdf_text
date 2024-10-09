@@ -44,8 +44,13 @@ public class SwiftReadPdfTextPlugin: NSObject, FlutterPlugin {
           
               for i in 0 ..< pageCount {
 				  if(pdf.page(at: i) != nil) {
+				  do {
 					let pageContent = pdf.page(at: i)!.string!
 					pdfText += pageContent
+} catch {
+    print("User creation failed with errorxxxxxx")
+}
+					
 				  }
               }
                 DispatchQueue.main.sync {
@@ -71,8 +76,13 @@ private func getPDFtextPaginated (result: FlutterResult, path: String)
           
               for i in 0 ..< pageCount {
 				if(pdf.page(at: i) != nil) {
+				  do {
                   let pageContent = pdf.page(at: i)!.string!
                   pdfArray.append(pageContent)
+} catch {
+    print("User creation failed with errorxxxxxx")
+}
+
 				}
               }
                 DispatchQueue.main.sync {
